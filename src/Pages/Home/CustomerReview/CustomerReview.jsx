@@ -62,7 +62,7 @@ const CustomerReviews = () => {
   };
 
   return (
-    <section className="mt-24">
+    <section data-aos="fade-up" className="mt-24">
       {/* Top Decorative Image */}
       <div className="mb-8 text-center">
         <img

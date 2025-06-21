@@ -63,6 +63,7 @@ const OurServices = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
         {services.map((service, index) => (
           <div
+          data-aos="zoom-in"
             key={index}
             className="relative group bg-white rounded-xl shadow-md px-8 py-10 text-center transition duration-300 overflow-hidden"
           >

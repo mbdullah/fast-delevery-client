@@ -2,7 +2,7 @@ import React from "react";
 
 const Faq = () => {
   return (
-    <section className="my-24">
+    <section data-aos="fade-up" className="my-24">
       <div className="text-center mb-6">
         <h2 className="text-3xl xl:text-4xl font-extrabold text-secondary">
           Frequently Asked Question (FAQ)
@@ -14,7 +14,7 @@ const Faq = () => {
         </p>
       </div>
 
-      <div className="max-w-5xl mx-auto space-y-5">
+      <div data-aos='fade-left' className="max-w-5xl mx-auto space-y-5">
         <div className="collapse collapse-arrow bg-gray-50 text-secondary [&_input:checked~.collapse-title]:bg-[#067a8722] [&_input:checked~.collapse-title]:text-gray-700 [&_input:checked~.collapse-content]:bg-[#067a8722] [&_input:checked~.collapse-content]:text-[#606060] [&_input:checked]:border-primary">
           <input type="radio" name="my-accordion-2" defaultChecked />
           <div className="collapse-title font-bold text-[16px] lg:text-xl">

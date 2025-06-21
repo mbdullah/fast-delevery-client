@@ -30,6 +30,7 @@ const CardSection = () => {
     <section className="pt-24 pb-20 border-0 md:border-y-2 border-dashed border-secondary mt-24">
       {cardData.map((item) => (
         <div
+          data-aos="fade-up"
           key={item.id}
           className="w-full flex flex-col md:flex-row items-center gap-6 px-5 md:px-10 py-8 bg-white mb-6 rounded-3xl shadow-xl"
         >

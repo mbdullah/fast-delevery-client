@@ -25,7 +25,7 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="mt-16 px-5 md:px-10">
+    <section data-aos="fade-up" className="mt-16 px-5 md:px-10">
       <div className="text-center mb-10">
         <h2 className="text-3xl md:text-4xl font-bold text-secondary text-left">How It Works</h2>
       </div>

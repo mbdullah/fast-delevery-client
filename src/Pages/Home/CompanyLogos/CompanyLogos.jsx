@@ -9,7 +9,7 @@ import startPeople from "../../../assets/brands/start-people 1.png"
 
 const CompanyLogos = () => {
   return (
-    <section className="mt-24">
+    <section data-aos="fade-up" className="mt-24">
       <div className="text-center mb-6 lg:mb-10">
         <h2 className="text-2xl text-[28px] font-extrabold text-secondary">We've helped thousands of sales teams</h2>
       </div>
