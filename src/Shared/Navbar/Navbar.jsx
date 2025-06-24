@@ -4,13 +4,19 @@ import ProFastLogo from "../ProFastLogo/ProFastLogo";
 import useAuth from "../../Hooks/useAuth";
 
 const Navbar = () => {
+  const {user, logOut} = useAuth();
     const navLink = <>
     <li><NavLink to="/">Home</NavLink></li>
+    <li><NavLink to="/sendParcel">Send A Parcel</NavLink></li>
+    {
+      user && <>
+      <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+      </>
+    }
     <li><NavLink to="/coverage">Coverage</NavLink></li>
     <li><NavLink to="/about">About Us</NavLink></li>
     </>
 
-    const {user, logOut} = useAuth();
 
     const handleLogout = () => {
       logOut()

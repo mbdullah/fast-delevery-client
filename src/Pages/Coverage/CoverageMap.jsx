@@ -9,8 +9,8 @@ import { FaSearch } from 'react-icons/fa';
 // You can customize the marker icon if you want
 const markerIcon = new Icon({
   iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
+  iconSize: [10, 20],
+  iconAnchor: [5, 15],
 });
 
 // ✅ 3. [FlyToDistrict COMPONENT] 🔖 ADDED
@@ -63,7 +63,7 @@ const CoverageMap = ({ serviceCenter }) => {
       </div>
 
 
-      <div className="w-full h-[700px] mt-5 rounded-xl overflow-hidden shadow-lg border">
+      <div className="w-full h-[600px] mt-5 rounded-xl overflow-hidden shadow-lg border">
       <MapContainer center={position} zoom={7} scrollWheelZoom={false} className="h-full w-full z-0">
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'

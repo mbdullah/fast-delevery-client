@@ -1,21 +1,34 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import useAuth from "../../../Hooks/useAuth";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import GoogleLogin from "../GoogleLogin/GoogleLogin";
+import Swal from "sweetalert2";
 
 const Register = () => {
-    const {register, handleSubmit, formState: {errors}} = useForm();
-    const {createUser} = useAuth();
-    const onSubmit = data => {
-        createUser(data.email, data.password)
-        .then(result => {
-          console.log(result.user);
-        })
-        .catch(error => {
-          console.error(error);
-        })
-    }
+  const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const { createUser } = useAuth();
+  const onSubmit = (data) => {
+    createUser(data.email, data.password)
+      .then((result) => {
+        if (result.user) {
+          Swal.fire({
+            title: "Register Successfully!",
+            icon: "success",
+            draggable: true,
+          });
+          navigate("/");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
   return (
     <div className="bg-base-200">
       <div className="card bg-base-100 w-full max-w-sm">
@@ -55,11 +68,18 @@ const Register = () => {
               <div>
                 <a className="link link-hover">Forgot password?</a>
               </div>
-              <button className="btn btn-primary text-black mt-4">Register</button>
+              <button className="btn btn-primary text-black mt-4">
+                Register
+              </button>
             </fieldset>
-            <p>Already have an account <Link className="btn btn-link" to="/login">Login</Link></p>
+            <p>
+              Already have an account{" "}
+              <Link className="btn btn-link" to="/login">
+                Login
+              </Link>
+            </p>
           </form>
-            <GoogleLogin></GoogleLogin>
+          <GoogleLogin></GoogleLogin>
         </div>
       </div>
     </div>
