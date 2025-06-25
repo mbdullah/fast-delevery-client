@@ -4,8 +4,10 @@ import useAuth from "../../../Hooks/useAuth";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { FaEye, FaMoneyBill, FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router";
 
 const MyParcels = () => {
+  const navigate = useNavigate();
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
 
@@ -23,9 +25,8 @@ const MyParcels = () => {
     alert(`Tracking ID: ${parcel.tracking_id}\nTitle: ${parcel.title}`);
   };
 
-  const handlePay = (parcel) => {
-    // Replace this with real payment logic
-    alert(`Paying ৳${parcel.cost} for ${parcel.title}`);
+  const handlePay = (id) => {
+    navigate(`/dashboard/payment/${id}`)
   };
 
   const handleDelete = (id) => {
@@ -94,14 +95,14 @@ const MyParcels = () => {
                 <td className="space-x-2">
                   <button
                     className="btn btn-sm btn-info text-white"
-                    onClick={() => handleView(parcel)}
+                    onClick={() => handleView(parcel._id)}
                   >
                     <FaEye />
                   </button>
                   <button
                     className="btn btn-sm btn-success text-white"
                     disabled={parcel.payment_status === "paid"}
-                    onClick={() => handlePay(parcel)}
+                    onClick={() => handlePay(parcel._id)}
                   >
                     <FaMoneyBill />
                   </button>
